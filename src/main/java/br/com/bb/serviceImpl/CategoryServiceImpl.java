@@ -7,6 +7,7 @@
  */
 package br.com.bb.serviceImpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,17 @@ public class CategoryServiceImpl implements CategoryService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
+
 	@Override
-	public Category getByCategory(Long categoryId) {
-		// TODO Auto-generated method stub
-		Optional<Category> categorys = categoryRepository.findById(categoryId);
-		return categorys.get();
+	public Category getCategoryById(Long categoryId) {
+		Optional<Category>obj = categoryRepository.findById(categoryId);
+		return obj.get();
+	}
+
+
+	@Override
+	public List<Category> getAll() {
+		return categoryRepository.findAll();
 	}
 
 }

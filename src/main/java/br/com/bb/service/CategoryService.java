@@ -1,11 +1,13 @@
 package br.com.bb.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
 import br.com.bb.entity.Category;
 
 public interface CategoryService {
 
-	public Category getByCategory(Long categoryId);
+	public Category getCategoryById(Long categoryId);
+
+	public List<Category> getAll();
 
 }

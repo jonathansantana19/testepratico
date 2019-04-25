@@ -1,7 +1,9 @@
 CREATE TABLE CATEGORIA
 (
    ID BIGINT PRIMARY KEY AUTO_INCREMENT,
-   DESCRICAO varchar(255) not null
+   DESCRICAO varchar(255) not null,
+    ATIVO BOOLEAN,
+    primary key(id)
 );
 
 
@@ -11,5 +13,7 @@ CREATE TABLE PRODUTO
   ID BIGINT PRIMARY KEY AUTO_INCREMENT,
    DESCRICAO varchar(255) not null,
    ATIVO BOOLEAN,
-   primary key(id)
+   ID_CATEGORIA INT, 
+   primary key(ID),
+    FOREIGN KEY(ID_CATEGORIA) REFERENCES CATEGORIA(ID)
 );
